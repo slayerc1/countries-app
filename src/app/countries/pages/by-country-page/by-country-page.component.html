@@ -1,0 +1,24 @@
+<h2>Por País</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <!-- SearchBox -->
+    <core-search-box
+      placeholder="Buscar por País"
+      [initialValue]="initialValue"
+      (onValue)="searchByName($event)"
+    ></core-search-box>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <!-- Tabla -->
+    <hr />
+    @if (isLoading) {
+    <core-loading-spinner></core-loading-spinner>
+    }
+    <countries-table [countries]="countries"></countries-table>
+  </div>
+</div>
